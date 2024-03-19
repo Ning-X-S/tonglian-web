@@ -36,7 +36,7 @@
           />
         </el-input>
       </el-form-item>
-      <el-form-item prop="code" v-if="captchaEnabled">
+      <!-- <el-form-item prop="code" v-if="captchaEnabled">
         <el-input
           v-model="loginForm.code"
           auto-complete="off"
@@ -53,7 +53,7 @@
         <div class="login-code">
           <img :src="codeUrl" @click="getCode" class="login-code-img" />
         </div>
-      </el-form-item>
+      </el-form-item> -->
       <el-checkbox
         v-model="loginForm.rememberMe"
         style="margin: 0px 0px 25px 0px"
@@ -96,7 +96,7 @@ export default {
       codeUrl: "",
       loginForm: {
         username: "admin",
-        password: "admin123",
+        password: "",
         rememberMe: false,
         code: "",
         uuid: "",
@@ -108,7 +108,7 @@ export default {
         password: [
           { required: true, trigger: "blur", message: "请输入您的密码" },
         ],
-        code: [{ required: true, trigger: "change", message: "请输入验证码" }],
+        // code: [{ required: true, trigger: "change", message: "请输入验证码" }],
       },
       loading: false,
       // 验证码开关
